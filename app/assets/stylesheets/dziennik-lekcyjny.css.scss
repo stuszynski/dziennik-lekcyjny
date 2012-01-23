@@ -1,0 +1,44 @@
+$basefont: 16px;
+$baseline: 24px;
+
+@import 'bootstrap';
+
+article {
+  clear: both;
+}
+
+body {
+  padding-top: 60px;
+}
+
+// patterns.css.scss:
+// 0 -- opaque
+// 1 -- transparent
+.topbar-inner, .topbar .fill {
+  background-color: rgb(0, 0, 44);
+  @include vertical-gradient(#451220, #451320);
+  $shadow: 0 0 3px rgba(0, 0, 44, .25), inset 0 -1px 0 rgba(0, 0, 44, .1);
+  @include box-shadow($shadow);
+}
+
+$headerColor: #000044;
+$headerColorLight: lighten($headerColor, 25%);
+
+// type.css.scss
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: $headerColor;
+  small {
+    color: $headerColorLight;
+  }
+}
+
+// statuses: datetime
+.date {
+  float: right;
+  font-style: italic;
+  font-size: 90%;
+}
+a.entities {
+  margin-left: .5em;
+}

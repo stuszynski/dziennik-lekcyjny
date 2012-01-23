@@ -1,0 +1,52 @@
+// Place all the styles related to the Students controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a {
+  color: black; }
+.red, a.red {
+  color: red; }
+.green, a.green {
+  color: green; }
+.blue, a.blue {
+  color: blue; }
+
+.unknown, a.unknown {
+  color: cyan; }
+
+.today {
+  color: #E82C0C; }
+
+.link {
+  margin-top: 3em;
+  margin-left: 2em;
+  clear: both; }
+
+.index {
+  .attribute {
+     clear: both;
+     div[data-student-rank] { // sliders
+        width: 200px;
+        float: right;
+        margin-right: 0.5em; }
+     .full-name, .presence, .absences {
+        float: left; }
+     .full-name {
+        a {
+          text-decoration: none; } }
+     .presence {
+        cursor: pointer;
+        margin-right: 1em;
+        a {
+          text-decoration: none;
+          color: #E82C0C; } }
+     .absences {
+        margin-left: 1em;
+        position: relative;
+        top: -0.1ex; }
+     .links {
+        float: right;
+        a {
+          margin-left: 0.5em;
+          text-decoration: none;
+          color: #E80C7A; } } } }

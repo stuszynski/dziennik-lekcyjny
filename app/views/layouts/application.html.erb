@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dziennik Lekcyjny</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <%= render :partial => 'common/menu' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content">
+      <div class="page-header">
+        <%= render :partial => 'common/header' %>
+      </div>
+      <div class="row">
+        <div class="span16">
+          <%= render :partial => 'common/flashes' %>
+          <%= yield %>
+        </div>
+      </div>
+      <footer>
+        <%= render :partial => 'common/footer' %>
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>
