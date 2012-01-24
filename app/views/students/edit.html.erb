@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
+<div class="link">
+  <%= link_to 'Back', students_path, class: "btn primary" %>
+  <%= link_to 'Show', edit_student_path(@student), class: "btn primary" %>
+</div>

@@ -1,14 +1,15 @@
 <% @students.each do |student| %>
 <article class="index">
-  <div class="attribute">
+  <div class="student clearfix">
     <div class="presence"><%= link_to '☺', not_present_student_path(student), method: :put %></div>
-    <div class="full-name <%= student.group %>"><%= link_to student.full_name, student %></div>
+    <% group = student.group %>
+    <div class="full-name"><%= link_to student.full_name, student, class: group %></div>
     <div class="absences"><%= bullets(student.absences) %></div>
     <div class="links">
-      <%= link_to '✎ Edit', edit_student_path(student), class: "btn" %>
+      <%= link_to '✎ Edit', edit_student_path(student), class: "btn small" %>
     </div>
   </div>
 </article>
 <% end %>
 
-<div class="link"><%= link_to 'New Student', new_student_path, class: "btn primary" %></div>
+<div class="link"><%= link_to 'New Student', new_student_path, class: "btn" %></div>

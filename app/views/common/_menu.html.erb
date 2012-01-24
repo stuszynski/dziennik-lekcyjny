@@ -1,7 +1,16 @@
-<a class="brand" href="#">Dziennik lekcyjny</a>
+<a class="brand" href="#">Dziennik lekcyjny, lato 11/12</a>
 <ul class="nav">
   <li class="active"><a href="http://tao.inf.ug.edu.pl">Home</a>
   <li><%= link_to "About", root_path %>
+  <li class="dropdown" data-dropdown="dropdown">
+    <a href="#" class="dropdown-toggle">Classes</a>
+    <ul class="dropdown-menu">
+      <li><a href="#">języki programowania</a></li>
+      <li><a href="#">architektura serwisów internetowych</a></li>
+      <li class="divider"></li>
+      <li><a href="http://inf.ug.edu.pl/plan">plan zajęć</a></li>
+    </ul>
+  </li>
 </ul>
 <form action="" class="pull-right">
   <button class="btn" type="submit">Sign in through GitHub</button>

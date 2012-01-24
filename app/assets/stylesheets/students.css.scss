@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$presenceColor: #94190D;
+
 a {
   color: black; }
 .red, a.red {
@@ -15,20 +17,22 @@ a {
   color: cyan; }
 
 .today {
-  color: #E82C0C; }
+  color: $presenceColor; }
 
 .link {
   margin-top: 3em;
   margin-left: 2em;
   clear: both; }
 
+// buźki
+.presence, .absences {
+  font-size: 160%;
+}
+
 .index {
-  .attribute {
-     clear: both;
-     div[data-student-rank] { // sliders
-        width: 200px;
-        float: right;
-        margin-right: 0.5em; }
+  .student {
+     .btn {
+       margin-bottom: .25em; }
      .full-name, .presence, .absences {
         float: left; }
      .full-name {
@@ -36,12 +40,13 @@ a {
           text-decoration: none; } }
      .presence {
         cursor: pointer;
-        margin-right: 1em;
+        margin-right: .25em;
+        margin-top: -.1em;
         a {
           text-decoration: none;
-          color: #E82C0C; } }
+          color: $presenceColor; } }
      .absences {
-        margin-left: 1em;
+        margin-left: .5em;
         position: relative;
         top: -0.1ex; }
      .links {
@@ -49,4 +54,38 @@ a {
         a {
           margin-left: 0.5em;
           text-decoration: none;
-          color: #E80C7A; } } } }
+          color: black; } } } }
+
+.show {
+  font-size: 140%;
+  .name {
+    display: inline-block;
+    text-align: right;
+    padding-right: 1em;
+    width: 6em;
+  }
+  .attribute {
+    margin-top: .75em;
+    .comments {
+      line-height: 140%;
+      margin-top: -1.2em; // jak wyliczyć tę poprawkę?
+      margin-left: 6em + 1em;
+    }
+  }
+  .absences {
+    font-size: 100%;
+    margin-left: 2em;
+    color: $presenceColor;
+  }
+  .links {
+    margin-top: 3em;
+    margin-left: 0;
+  }
+}
+
+#rank {
+  display: inline-block;
+  width: 6em;
+  margin-left: 1em;
+  color: red;
+}

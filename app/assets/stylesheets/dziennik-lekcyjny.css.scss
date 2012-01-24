@@ -33,12 +33,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// statuses: datetime
-.date {
-  float: right;
-  font-style: italic;
-  font-size: 90%;
-}
-a.entities {
-  margin-left: .5em;
+// classes menu
+.menu-dropdown, .dropdown-menu {
+  max-width: 300px;
+  width: 300px;
 }

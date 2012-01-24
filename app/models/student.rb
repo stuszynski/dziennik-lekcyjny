@@ -12,6 +12,8 @@ class Student
   field :comments, :type => String
   field :class_name, :type => String
   field :group, :type => String
+  field :repositories, :type => String
+  field :rank, :type => Integer
 
   # getter and setter
 

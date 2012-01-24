@@ -1,45 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Last name:</b>
-  <%= @student.last_name %>
-</p>
-
-<p>
-  <b>First name:</b>
-  <%= @student.first_name %>
-</p>
-
-<p>
-  <b>Id number:</b>
-  <%= @student.id_number %>
-</p>
-
-<p>
-  <b>Nickname:</b>
-  <%= @student.nickname %>
-</p>
-
-<p>
-  <b>Absences:</b>
-  <%= @student.absences %>
-</p>
-
-<p>
-  <b>Comments:</b>
-  <%= @student.comments %>
-</p>
-
-<p>
-  <b>Class name:</b>
-  <%= @student.class_name %>
-</p>
-
-<p>
-  <b>Group:</b>
-  <%= @student.group %>
-</p>
-
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<article class="show">
+  <h2>
+    <span id="rank"><%= progress(@student.rank) %></span><span><%= @student.full_name %></span>
+    <span class="absences"><%= @student.absences_list %></span>
+  </h2>
+  <div class="attribute">
+    <span class="name">Repo URL:</span>
+    <span class="value uri"><%= @student.repositories %></span>
+  </div>
+  <div class="attribute">
+    <span class="name">Nickname:</span>
+    <span class="value"><%= @student.nickname %></span>
+  </div>
+  <div class="attribute">
+    <span class="name">Id:</span>
+    <span class="value"><%= @student.id_number %></span>
+  </div>
+  <div class="attribute">
+    <span class="name">Course:</span>
+    <span class="value"><%= @student.class_name %></span>
+  </div>
+  <div class="attribute">
+    <div class="name">Comments:</div>
+    <div class="value comments"><%= @student.comments %></div>
+  </div>
+  <div class="links">
+    <%= link_to 'Back', students_path, class: "btn primary" %>
+    <%= link_to 'Edit', edit_student_path(@student), class: "btn" %>
+  </div>
+</article>

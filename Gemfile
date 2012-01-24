@@ -8,6 +8,7 @@ gem 'rails', '3.2.0'
 gem 'bootstrap-sass', group: :assets
 
 gem 'formtastic'
+gem 'formtastic-bootstrap'
 
 gem 'omniauth'
 gem 'omniauth-github'

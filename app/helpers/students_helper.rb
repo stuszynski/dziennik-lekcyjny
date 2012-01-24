@@ -9,4 +9,12 @@ module StudentsHelper
     end.join(' ').html_safe
   end
 
+  def progress(n)
+    if n.blank?
+      "\#0"
+    else
+      "\##{@student.rank}"
+    end
+  end
+
 end

@@ -1,49 +1,32 @@
-<%= form_for(@student) do |f| %>
-  <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+<%= semantic_form_for @student do |f| %>
 
-      <ul>
-      <% @student.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+  <%= f.inputs do %>
+    <%= f.input :full_name, :input_html => { class: "span10" } %>
+    <%= f.input :rank, :input_html => { class: "span10" } %>
+    <%= f.input :repositories, :input_html => { class: "span10" } %>
+    <%= f.input :nickname, :input_html => { class: "span10" } %>
+    <%= f.input :absences_list, :input_html => { class: "span10" } %>
+    <%= f.input :comments, as: :text, :input_html => { class: "span10" } %>
+    <%= f.input :class_name, :as => :select,
+          :collection => {"niewiadoma" => "unknown",
+                          "języki programowania" => "jp2011l",
+                          "technologie nosql" => "nosql2011l",
+                          "seminarium" => "seminarium2011",
+                          "techniki internetowe" => "ti2011",
+                          "architektura serwisów internetowych" => "asi2011l",
+                          "przygotowywanie publikacji naukowych" => "pbn" },
+          :input_html => { class: "span10" } %>
+    <%= f.input :group,:as => :select,
+          :collection => {"niewiadoma" => "unknown",
+                          "niebieska" => "blue",
+                          "zielona" => "green",
+                          "czerwona" => "red"},
+          :input_html => { class: "span10" } %>
+    <%= f.input :id_number, :input_html => { class: "span10" } %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :id_number %><br />
-    <%= f.text_field :id_number %>
-  </div>
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname %>
-  </div>
-  <div class="field">
-    <%= f.label :absences %><br />
-    <%= f.text_field :absences %>
-  </div>
-  <div class="field">
-    <%= f.label :comments %><br />
-    <%= f.text_field :comments %>
-  </div>
-  <div class="field">
-    <%= f.label :class_name %><br />
-    <%= f.text_field :class_name %>
-  </div>
-  <div class="field">
-    <%= f.label :group %><br />
-    <%= f.text_field :group %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+
 <% end %>
