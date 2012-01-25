@@ -6,10 +6,15 @@
   <li class="dropdown" data-dropdown="dropdown">
     <a href="#" class="dropdown-toggle">Classes</a>
     <ul class="dropdown-menu">
-      <li><a href="#">języki programowania</a></li>
-      <li><a href="#">architektura serwisów internetowych</a></li>
-      <li class="divider"></li>
-      <li><a href="http://inf.ug.edu.pl/plan">plan zajęć</a></li>
+      <li><%= link_to "techologie nosql", students_path(class_name: "nosql", year: 2011, semester: "summer") %>
+      <li><%= link_to "języki programowania", students_path(class_name: "jp", year: 2011, semester: "summer") %>
+      <li class="divider">
+      <li><%= link_to "architektura serwisów internetowych", students_path(class_name: "asi", year: 2011, semester: "summer") %>
+      <li><%= link_to "techniki internetowe", students_path(class_name: "ti", year: 2011, semester: "summer") %>
+      <li class="divider">
+      <li><%= link_to "seminarium", students_path(class_name: "seminarium", year: 2011, semester: "summer") %>
+      <li class="divider">
+      <li><a href="http://inf.ug.edu.pl/plan">plan zajęć</a>
     </ul>
   </li>
   <li><%= link_to "Admin", admin_students_path %>

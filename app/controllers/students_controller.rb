@@ -5,7 +5,23 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    # logger.info "☻ request query parameters: #{request.query_parameters}"
+
+    # logger.info "--> #{request.fullpath}"
+    # logger.info "--> GITHUB_KEY: #{ENV['GITHUB_KEY']}"
+    # logger.info "--> GITHUB_SECRET: #{ENV['GITHUB_SECRET']}"
+
+    class_name = params[:class_name] || "unknown"
+    year = params[:year] || "2011"
+    semester = params[:semester] || "summer"
+
+    if params[:class_name]
+      @students = Student.where(class_name: class_name, year: year, semester: semester)
+    else
+      @students = Student.where(year: 2011, semester: "summer")
+    end
+
+    # @students = Student.all
 
     respond_to do |format|
       format.html # index.html.erb

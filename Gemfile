@@ -36,6 +36,9 @@ gem 'jquery-rails'
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
 
+gem 'wirble'
+gem 'hirb'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
