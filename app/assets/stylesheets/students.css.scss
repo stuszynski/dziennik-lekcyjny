@@ -83,9 +83,38 @@ a {
   }
 }
 
+// czyszczenie: użyć operatora &
+
+.delete {
+  .student {
+    font-size: 140%;
+    .link { margin: -.2em 1em .5em 0; }
+    .absences { margin-left: 1em; }
+    .link, .full-name, .absences { float: left; }
+  }
+}
+
 #rank {
   display: inline-block;
   width: 6em;
   margin-left: 1em;
   color: red;
+}
+
+// oceny
+
+.bdb {
+  background-color: #94190D;
+}
+
+.db {
+  background-color: #FD6300;
+}
+
+.dst {
+  background-color: #FFD91C;
+}
+
+.ndst {
+  background-color: #D0D90C;
 }

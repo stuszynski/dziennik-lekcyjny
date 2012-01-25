@@ -9,8 +9,8 @@ module StudentsHelper
     end.join(' ').html_safe
   end
 
-  def progress(n)
-    if n.blank?
+  def progress
+    if @student.rank.blank?
       "\#0"
     else
       "\##{@student.rank}"

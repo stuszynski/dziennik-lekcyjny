@@ -2,6 +2,7 @@ DziennikLekcyjny::Application.routes.draw do
 
   resources :students do
     put 'not_present', :on => :member
+    get 'admin', :on => :collection
   end
 
   root :to => 'students#index'

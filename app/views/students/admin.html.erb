@@ -1,0 +1,18 @@
+<h1>Admin page</h1>
+
+<% @students.each do |student| %>
+<article class="delete">
+  <div class="student clearfix">
+
+    <div class="link">
+      <%= link_to '✖ Destroy', student, confirm: 'Are you sure?',
+            class: "btn danger small", method: :delete %>
+    </div>
+
+    <% group = student.group %>
+    <div class="full-name"><%= link_to student.full_name, student, class: group, target: "_new" %></div>
+    <div class="absences"><%= bullets(student.absences) %></div>
+
+  </div>
+</article>
+<% end %>

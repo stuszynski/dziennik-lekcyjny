@@ -13,6 +13,11 @@ class StudentsController < ApplicationController
     end
   end
 
+  # GET /students/admin
+  def admin
+    @students = Student.all
+  end
+
   # GET /students/1
   # GET /students/1.json
   def show
@@ -62,7 +67,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
 
     if @student.update_attributes(params[:student])
-      redirect_to students_url, notice: 'Student was successfully updated'
+      redirect_to student_url(@student), notice: 'Student was successfully updated'
     else
       render action: "edit"
     end
@@ -89,7 +94,7 @@ class StudentsController < ApplicationController
     @student.destroy
 
     respond_to do |format|
-      format.html { redirect_to students_url }
+      format.html { redirect_to admin_students_url, notice: 'Student was successfully destroyed' }
       format.json { head :no_content }
     end
   end

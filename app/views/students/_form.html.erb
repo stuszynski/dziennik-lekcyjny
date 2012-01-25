@@ -1,12 +1,12 @@
 <%= semantic_form_for @student do |f| %>
 
   <%= f.inputs do %>
-    <%= f.input :full_name, :input_html => { class: "span10" } %>
-    <%= f.input :rank, :input_html => { class: "span10" } %>
-    <%= f.input :repositories, :input_html => { class: "span10" } %>
-    <%= f.input :nickname, :input_html => { class: "span10" } %>
-    <%= f.input :absences_list, :input_html => { class: "span10" } %>
-    <%= f.input :comments, as: :text, :input_html => { class: "span10" } %>
+    <%= f.input :full_name, :hint => "Nazwisko Imię", :input_html => { class: "span8" } %>
+    <%= f.input :rank, :input_html => { class: "span8" } %>
+    <%= f.input :repositories, :hint => "https://github.com/twój_login", :input_html => { class: "span8" } %>
+    <%= f.input :nickname, :input_html => { class: "span8" } %>
+    <%= f.input :absences_list, :input_html => { class: "span8" } %>
+    <%= f.input :comments, as: :text, :input_html => { class: "span8" } %>
     <%= f.input :class_name, :as => :select,
           :collection => {"niewiadoma" => "unknown",
                           "języki programowania" => "jp",
@@ -15,9 +15,9 @@
                           "techniki internetowe" => "ti",
                           "architektura serwisów internetowych" => "asi",
                           "przygotowywanie publikacji naukowych" => "pbn" },
-          :input_html => { class: "span10" } %>
+          :input_html => { class: "span8" } %>
 
-    <%= f.input :semester, :as => :check_boxes, :collection => { "zima" => "winter", "lato" => "summer" } %>
+    <%= f.input :semester, :as => :radio, :collection => { "zima" => "winter", "lato" => "summer" } %>
     <%= f.input :year, :as => :radio, :collection => ["2011", "2012"] %>
 
     <%= f.input :group,:as => :select,
@@ -25,9 +25,9 @@
                           "niebieska" => "blue",
                           "zielona" => "green",
                           "czerwona" => "red"},
-          :input_html => { class: "span10" } %>
+          :input_html => { class: "span8" } %>
 
-    <%= f.input :id_number, :input_html => { class: "span10" } %>
+    <%= f.input :id_number, :input_html => { class: "span8" } %>
 
   <% end %>
 

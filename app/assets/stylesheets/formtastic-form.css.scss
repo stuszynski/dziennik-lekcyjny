@@ -1,3 +1,31 @@
+.inputs {
+  .help-inline, .help-block {
+    color: red;
+  }
+}
+
+.index {
+  .student {
+    .links {
+      margin-top: -.2em;
+      margin-bottom: .2em;
+    }
+    .rank {
+      float: right;
+      margin-right: 1em;
+      margin-top: .1em;
+      progress {
+        width: 500px;
+        &::-moz-progress-bar {
+          background-color: #000044;
+        }
+        -moz-appearance: none;
+        border: 1px solid #888;
+     }
+    }
+  }
+}
+
 div.choices ul.choices-group, li.choice {
   display: inline;
 }

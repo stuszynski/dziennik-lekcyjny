@@ -1,4 +1,5 @@
-<a class="brand" href="#">Dziennik lekcyjny, lato 11/12</a>
+<%= link_to "Dziennik lekcyjny, lato 11/12", root_path, class: "brand" %>
+
 <ul class="nav">
   <li class="active"><a href="http://tao.inf.ug.edu.pl">Home</a>
   <li><%= link_to "About", root_path %>
@@ -11,6 +12,7 @@
       <li><a href="http://inf.ug.edu.pl/plan">plan zajęć</a></li>
     </ul>
   </li>
+  <li><%= link_to "Admin", admin_students_path %>
 </ul>
 <form action="" class="pull-right">
   <button class="btn" type="submit">Sign in through GitHub</button>
