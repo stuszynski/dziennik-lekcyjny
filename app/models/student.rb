@@ -3,17 +3,20 @@
 class Student
 
   include Mongoid::Document
+  include Mongoid::MultiParameterAttributes
 
-  field :last_name, :type => String
-  field :first_name, :type => String
-  field :id_number, :type => Integer
-  field :nickname, :type => String
-  field :absences, :type => Array
-  field :comments, :type => String
-  field :class_name, :type => String
-  field :group, :type => String
-  field :repositories, :type => String
-  field :rank, :type => Integer
+  field :last_name, type: String
+  field :first_name, type: String
+  field :id_number, type: Integer
+  field :nickname, type: String
+  field :absences, type: Array
+  field :comments, type: String
+  field :class_name, type: String
+  field :group, type: String
+  field :repositories, type: String
+  field :rank, type: Integer
+  field :year, type: Integer
+  field :semester, type: Integer
 
   # getter and setter
 

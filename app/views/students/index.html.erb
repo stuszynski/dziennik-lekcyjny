@@ -3,7 +3,7 @@
   <div class="student clearfix">
     <div class="presence"><%= link_to '☺', not_present_student_path(student), method: :put %></div>
     <% group = student.group %>
-    <div class="full-name"><%= link_to student.full_name, student, class: group %></div>
+    <div class="full-name"><%= link_to student.full_name, student, class: group, target: "_new" %></div>
     <div class="absences"><%= bullets(student.absences) %></div>
     <div class="links">
       <%= link_to '✎ Edit', edit_student_path(student), class: "btn small" %>
