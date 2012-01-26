@@ -1,7 +1,9 @@
 <% @students.each do |student| %>
 <article class="index">
   <div class="student clearfix">
-    <div class="presence"><%= link_to '☺', not_present_student_path(student), method: :put %></div>
+    <div class="presence">
+      <%= link_to '☺', not_present_student_path(student), method: :put, remote: true, data: { type: :json } %>
+    </div>
     <% group = student.group %>
     <div class="full-name"><%= link_to student.full_name, student, class: group, target: student.full_name %></div>
     <div class="absences"><%= bullets(student.absences) %></div>

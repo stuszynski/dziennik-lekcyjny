@@ -89,19 +89,28 @@ class StudentsController < ApplicationController
     end
   end
 
-  # def update
+  # # PUT /students/1/not_present
+  # def not_present
   #   @student = Student.find(params[:id])
-
-  #   respond_to do |format|
-  #     if @student.update_attributes(params[:student])
-  #       format.html { redirect_to @student, notice: 'Student was successfully updated.' }
-  #       format.json { head :no_content }
-  #     else
-  #       format.html { render action: "edit" }
-  #       format.json { render json: @student.errors, status: :unprocessable_entity }
-  #     end
-  #   end
+  #   @student.add_to_set(:absences, today_absence)
+  #   redirect_to students_url
   # end
+
+  # PUT /students/1/not_present
+  # PUT /students/1/not_present.json
+  def not_present
+    @student = Student.find(params[:id])
+
+    respond_to do |format|
+      if @student.add_to_set(:absences, today_absence)
+        format.html { redirect_to students_url, notice: 'Student absences were successfully updated.' }
+        format.json { render :json => { value: bullets(@student.absences) }.to_json }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @student.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /students/1
   # DELETE /students/1.json
@@ -113,14 +122,6 @@ class StudentsController < ApplicationController
       format.html { redirect_to admin_students_url, notice: 'Student was successfully destroyed' }
       format.json { head :no_content }
     end
-  end
-
-  # PUT /students/1/not_present
-  def not_present
-    @student = Student.find(params[:id])
-    logger.info "☻ #{@student.full_name} absent at #{params[:absent]}"
-    @student.add_to_set(:absences, today_absence)
-    redirect_to students_url
   end
 
 end
