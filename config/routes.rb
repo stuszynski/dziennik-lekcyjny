@@ -1,5 +1,11 @@
 DziennikLekcyjny::Application.routes.draw do
 
+  match '/auth/:provider/callback' => 'session#create'
+  match '/auth/failure' => 'session#failure'
+
+  match '/signout' => 'session#destroy', :as => :signout
+  match '/signin' => 'session#new', :as => :signin
+
   resources :students do
     put 'not_present', :on => :member
     get 'admin', :on => :collection
