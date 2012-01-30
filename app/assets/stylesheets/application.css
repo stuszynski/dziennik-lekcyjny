@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require auth-buttons
  *= require formtastic-bootstrap
  *= require formtastic-form
  *= require dziennik-lekcyjny

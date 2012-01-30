@@ -1,7 +1,7 @@
-last_name,first_name,id_number
-"Kuszelas","Jan",123123
-"Klonowski","Felicjan",221321
-"Korolczyk","Joga",356123
-"Grabczyk","Simona",491231
-"Kamińska","Irena",556123
-"Jankowski","Kazimierz",628942
+last_name,first_name,id_number,year,semester
+"Kuszelas","Jan",123123,2011,summer
+"Klonowski","Felicjan",221321,2011,summer
+"Korolczyk","Joga",356123,2011,summer
+"Grabczyk","Simona",491231,2011,summer
+"Kamińska","Irena",556123,2011,summer
+"Jankowski","Kazimierz",628942,2011,summer
