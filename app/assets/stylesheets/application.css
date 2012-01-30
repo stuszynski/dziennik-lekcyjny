@@ -14,4 +14,5 @@
  *= require formtastic-form
  *= require dziennik-lekcyjny
  *= require students
+ *= require users
 */

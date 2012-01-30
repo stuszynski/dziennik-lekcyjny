@@ -1,0 +1,13 @@
+<h1>GitHub Users</h1>
+
+<% @users.each do |student| %>
+<article class="users">
+  <div class="user">
+    <div class="uid"><span class="span2">UID:</span> <%= student.uid %></div>
+    <div class="name"><span class="span2">Name:</span> <%= student.name %></div>
+    <div class="email"><span class="span2">Email:</span> <%= student.email %></div>
+    <div class="nickname"><span class="span2">Nickname:</span> <%= student.nickname %></div>
+    <div class="url"><span class="span2">URL:</span> <%= student.url %></div>
+  </div>
+</article>
+<% end %>

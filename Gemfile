@@ -16,6 +16,8 @@ gem 'omniauth-github'
 gem 'mongoid'
 gem 'bson_ext'
 
+gem "cancan"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

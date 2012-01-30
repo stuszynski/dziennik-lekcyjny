@@ -1,5 +1,7 @@
 DziennikLekcyjny::Application.routes.draw do
 
+  get "users/index"
+
   match '/auth/:provider/callback' => 'session#create'
   match '/auth/failure' => 'session#failure'
 
