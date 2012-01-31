@@ -9,6 +9,7 @@ class Student
   field :first_name, type: String
   field :id_number, type: Integer
   field :nickname, type: String
+  field :uid, type: Integer        # uid z GitHub, http://caius.github.com/github_id/
   field :absences, type: Array
   field :comments, type: String
   field :class_name, type: String, default: "unknown"
