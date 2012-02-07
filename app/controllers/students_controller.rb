@@ -2,7 +2,8 @@
 
 class StudentsController < ApplicationController
 
-  skip_authorization_check only: :index
+  load_and_authorize_resource
+  skip_authorize_resource :only => :index
 
   # GET /students
   # GET /students.json

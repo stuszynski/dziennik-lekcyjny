@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class User
 
   include Mongoid::Document
@@ -25,30 +27,12 @@ class User
     end
   end
 
-  # def self.create_with_omniauth(auth)
-  #   # logger.info("AUTH_INFO: #{auth}")
-  #   # logger.info "-"*80
-  #   # logger.info "#{auth.provider}"
-  #   # logger.info "#{auth.uid}"
-  #   # logger.info "#{auth.info.name}"
-  #   # logger.info "#{auth.info.email}"
-  #   # logger.info "#{auth.info.nickname}"
-  #   # logger.info "#{auth.info.urls['GitHub']}"
+  def admin?
+    uid == 8049 # mój id na githubie
+  end
 
-  #   begin
-  #     create! do |user|
-  #       user.provider = auth['provider']
-  #       user.uid = auth['uid']
-  #       if auth['info']
-  #         user.nickname = auth['info']['nickname'] || ""
-  #         user.email = auth['info']['email'] || ""
-  #         user.name = auth['info']['name'] || ""
-  #         user.url = auth['info']['urls']['GitHub'] || ""
-  #       end
-  #     end
-  #   rescue Exception
-  #     raise Exception, "Cannot create user record!"
-  #   end
-  # end
+  def student?
+    uid != 8049
+  end
 
 end
