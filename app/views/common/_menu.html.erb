@@ -3,8 +3,8 @@
 <ul class="nav">
   <li class="active"><a href="http://tao.inf.ug.edu.pl">Home</a>
   <li><%= link_to "About", root_path %>
-  <li class="dropdown" data-dropdown="dropdown">
-    <a href="#" class="dropdown-toggle">Classes</a>
+  <li class="dropdown" id="classes">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#classess">Classes <b class="caret"></b></a>
     <ul class="dropdown-menu">
       <li><%= link_to "techologie nosql", students_path(class_name: "nosql", year: 2011, semester: "summer") %>
       <li><%= link_to "języki programowania", students_path(class_name: "jp", year: 2011, semester: "summer") %>

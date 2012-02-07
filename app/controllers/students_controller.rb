@@ -2,6 +2,8 @@
 
 class StudentsController < ApplicationController
 
+  skip_authorization_check only: :index
+
   # GET /students
   # GET /students.json
   def index

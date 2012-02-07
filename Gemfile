@@ -16,7 +16,7 @@ gem 'omniauth-github'
 gem 'mongoid'
 gem 'bson_ext'
 
-gem "cancan"
+gem "cancan", '~> 1.6.7'
 
 # Gems used only for assets and not required
 # in production environments by default.
