@@ -24,3 +24,19 @@
   color: #FFD91C;
   margin-right: 1em;
 }
+
+.disabled .rank, .disabled .full_name {
+  font-weight: bold;
+  font-size: 140%;
+}
+
+.disabled .rank {
+  color: red;
+  text-align: right;
+}
+
+.disabled .full_name {
+  color: #008;
+  text-align: left;
+  margin-left: 50px;
+}

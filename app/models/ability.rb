@@ -9,8 +9,7 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.student?
-      can :manage, Student, uid: user.uid
-      cannot :admin, Student
+      can [:index, :show, :edit, :update], Student, uid: user.uid
     else
       can :index, Student
     end

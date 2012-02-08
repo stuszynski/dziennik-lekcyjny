@@ -25,7 +25,7 @@
 
 <div class="pull-right">
 <% if current_user %>
-  <span class="logged">Logged in as <%= current_user.nickname %></span>
+  <span class="btn-auth btn-github small"><%= current_user.nickname %></span>
   <%= link_to('Logout', signout_path, class: "btn-auth btn-github small") %>
 <% else %>
   <%= link_to('Sign in through GitHub', signin_path, class: "btn-auth btn-github small")  %>
