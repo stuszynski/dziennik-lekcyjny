@@ -4,7 +4,7 @@ class User
 
   include Mongoid::Document
   field :provider, :type => String
-  field :uid, :type => String
+  field :uid, :type => Integer
   field :name, :type => String
   field :email, :type => String
   field :nickname, :type => String
@@ -32,7 +32,7 @@ class User
   end
 
   def student?
-    uid != 8049
+    (uid != nil) && (uid != 8049)
   end
 
 end

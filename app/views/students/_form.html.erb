@@ -10,7 +10,7 @@
     <%= f.input :absences_list, :input_html => { class: "span8" } %>
     <%= f.input :comments, as: :text, :input_html => { class: "span8" } %>
     <%= f.input :class_name, :as => :select,
-          :collection => {"niewiadoma" => "unknown",
+          :collection => {"nieprzydzielony" => "unknown",
                           "języki programowania" => "jp",
                           "technologie nosql" => "nosql",
                           "seminarium" => "seminarium",
@@ -23,7 +23,7 @@
     <%= f.input :year, :as => :radio, :collection => ["2011", "2012"] %>
 
     <%= f.input :group,:as => :select,
-          :collection => {"niewiadoma" => "unknown",
+          :collection => {"nieprzydzielony" => "unknown",
                           "niebieska" => "blue",
                           "zielona" => "green",
                           "czerwona" => "red"},
