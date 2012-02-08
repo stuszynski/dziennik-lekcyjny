@@ -8,11 +8,19 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require auth-buttons
  *= require formtastic-bootstrap
  *= require formtastic-form
  *= require dziennik-lekcyjny
  *= require students
  *= require users
+ *= require_self
 */
+
+.topbar .pull-right {
+  margin-top: 6px;
+}
+ .pull-right .logged {
+  color: #FFD91C;
+  margin-right: 1em;
+}
