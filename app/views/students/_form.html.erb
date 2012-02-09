@@ -22,7 +22,7 @@
     <%= f.input :absences_list, :input_html => { class: "span8", disabled: disabled } %>
     <%= f.input :comments, as: :text, :input_html => { class: "span8" } %>
     <%= f.input :class_name, :as => :select,
-          :collection => {"nieprzydzielony" => "unknown",
+          :collection => {"nieprzydzielony" => "unallocated",
                           "języki programowania" => "jp",
                           "technologie nosql" => "nosql",
                           "seminarium" => "seminarium",
@@ -37,11 +37,11 @@
     <% end %>
 
     <%= f.input :group,:as => :select,
-          :collection => {"nieprzydzielony" => "unknown",
+          :collection => {"nieprzydzielony" => "unallocated",
                           "niebieska" => "blue",
                           "zielona" => "green",
                           "czerwona" => "red"},
-          :input_html => { class: "span8", disabled: disabled } %>
+          :input_html => { class: "span8" } %>
 
     <%= f.input :id_number, :input_html => { class: "span8" } %>
 

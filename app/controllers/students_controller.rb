@@ -2,6 +2,13 @@
 
 class StudentsController < ApplicationController
 
+  include ActiveModel::MassAssignmentSecurity
+
+  # student może modyfikować: :id_number, :nickname, :comments, :group, :repositories
+
+  attr_protected :last_name, :first_name, :uid, :absences, :class_name, :rank, :year, :semester
+  attr_protected :last_name, :first_name, :uid, :absences, :class_name, :rank, :year, :semester, :as => :admin
+
   load_and_authorize_resource
   # skip_authorize_resource :only => :index
 
@@ -85,7 +92,8 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
 
-    if @student.update_attributes(params[:student])
+    # if @student.update_attributes(params[:student])
+    if @student.update_attributes(account_params)
       redirect_to student_url(@student), notice: 'Student was successfully updated'
     else
       render action: "edit"
@@ -125,6 +133,13 @@ class StudentsController < ApplicationController
       format.html { redirect_to admin_students_url, notice: 'Student was successfully destroyed' }
       format.json { head :no_content }
     end
+  end
+
+  protected
+
+  def account_params
+    role = current_user.admin? ? :admin : :default
+    sanitize_for_mass_assignment(params[:student], role)
   end
 
 end
