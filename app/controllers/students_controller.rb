@@ -4,10 +4,12 @@ class StudentsController < ApplicationController
 
   include ActiveModel::MassAssignmentSecurity
 
-  # student może modyfikować: :id_number, :nickname, :comments, :group, :repositories
+  # zob. poniżej kod metod account_params i update
 
   attr_accessible :id_number, :nickname, :comments, :group, :repositories
-  attr_accessible :rank, :full_name, :uid, :absences, :class_name, :group, :year, :semester, :as => :admin
+
+  attr_accessible :id_number, :nickname, :comments, :group, :repositories,
+    :rank, :full_name, :uid, :absences, :class_name, :year, :semester, :as => :admin
 
   load_and_authorize_resource
   # skip_authorize_resource :only => :index
