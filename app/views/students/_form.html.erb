@@ -17,7 +17,7 @@
     <%= f.input :repositories, :hint => "https://github.com/twój_login", :input_html => { class: "span8" } %>
     <%= f.input :nickname, :input_html => { class: "span8" } %>
     <%= f.input :uid, :hint => "<a href='http://caius.github.com/github_id/'>check it here</a>".html_safe,
-          :input_html => { class: "span8", disabled: disabled } %>
+          :input_html => { class: "span8" } %>
 
     <%= f.input :absences_list, :input_html => { class: "span8", disabled: disabled } %>
     <%= f.input :comments, as: :text, :input_html => { class: "span8" } %>

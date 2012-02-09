@@ -6,10 +6,11 @@ class StudentsController < ApplicationController
 
   # zob. poniżej kod metod account_params i update
 
-  attr_accessible :id_number, :nickname, :comments, :group, :repositories
+  attr_accessible :repositories, :nickname, :uid, :comments, :group, :id_number
 
-  attr_accessible :id_number, :nickname, :comments, :group, :repositories,
-    :rank, :full_name, :uid, :absences, :class_name, :year, :semester, :as => :admin
+  attr_accessible :repositories, :nickname, :uid, :comments, :group, :id_number,
+    :rank, :full_name, :absences, :class_name, :year, :semester,
+    :as => :admin
 
   load_and_authorize_resource
   # skip_authorize_resource :only => :index
