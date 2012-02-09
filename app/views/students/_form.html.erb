@@ -7,7 +7,7 @@
       <%= f.input :rank, :input_html => { class: "span8" } %>
     <% else %>
       <div class="row disabled clearfix">
-        <div class="rank span2"><%= "\##{@student.rank}" %></div>
+        <div class="rank span1"><%= "\##{@student.rank}" %></div>
         <div class="full_name span8"><%= "#{@student.full_name}" %></div>
       </div>
     <% end %>

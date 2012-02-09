@@ -1,5 +1,5 @@
-$basefont: 16px;
-$baseline: 24px;
+$baseFontSize: 16px;
+$baseLineHeight: 24px;
 
 @import 'bootstrap';
 
@@ -11,15 +11,32 @@ body {
   padding-top: 60px;
 }
 
+.navbar .brand {
+  margin: 0;
+  padding: 8px 12px 0 0;
+}
+
 // patterns.css.scss:
 // 0 -- opaque
 // 1 -- transparent
-.topbar-inner, .topbar .fill {
+
+.navbar-inner {
+  padding-left: 20px;
+  padding-right: 20px;
+  // @include gradient-vertical($navbarBackgroundHighlight, $navbarBackground);
   background-color: rgb(0, 0, 44);
-  @include vertical-gradient(#451220, #451320);
-  $shadow: 0 0 3px rgba(0, 0, 44, .25), inset 0 -1px 0 rgba(0, 0, 44, .1);
+  @include gradient-vertical(#451220, #451320);
+  @include border-radius(4px);
+  $shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
   @include box-shadow($shadow);
 }
+
+// .topbar-inner, .topbar .fill {
+//  background-color: rgb(0, 0, 44);
+//  //@include vertical-gradient(#451220, #451320);
+//  $shadow: 0 0 3px rgba(0, 0, 44, .25), inset 0 -1px 0 rgba(0, 0, 44, .1);
+//  @include box-shadow($shadow);
+//}
 
 $headerColor: #000044;
 $headerColorLight: lighten($headerColor, 25%);

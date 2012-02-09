@@ -1,27 +1,28 @@
 <%= link_to "Dziennik lekcyjny, lato 11/12", root_path, class: "brand" %>
 
-<ul class="nav">
-  <li class="active"><a href="http://tao.inf.ug.edu.pl">Home</a>
-  <li><%= link_to "About", root_path %>
-  <li class="dropdown" id="classes">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#classess">Classes <b class="caret"></b></a>
-    <ul class="dropdown-menu">
-      <li><%= link_to "techologie nosql", students_path(class_name: "nosql", year: 2011, semester: "summer") %>
-      <li><%= link_to "języki programowania", students_path(class_name: "jp", year: 2011, semester: "summer") %>
-      <li class="divider">
-      <li><%= link_to "architektura serwisów internetowych", students_path(class_name: "asi", year: 2011, semester: "summer") %>
-      <li><%= link_to "techniki internetowe", students_path(class_name: "ti", year: 2011, semester: "summer") %>
-      <li class="divider">
-      <li><%= link_to "seminarium", students_path(class_name: "seminarium", year: 2011, semester: "summer") %>
-      <li class="divider">
-      <li><a href="http://inf.ug.edu.pl/plan">plan zajęć</a>
-    </ul>
-  </li>
-  <li><%= link_to "Admin", admin_students_path %>
-  <li><%= link_to "Users", users_index_path %>
-</ul>
-
-<!-- https://github.com/necolas/css3-social-signin-buttons -->
+<div class="nav-collapse">
+  <ul class="nav">
+    <li class="active"><a href="http://tao.inf.ug.edu.pl">Home</a>
+    <li><%= link_to "About", root_path %>
+    <li class="dropdown" id="classes">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#classess">Classes <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "techologie nosql", students_path(class_name: "nosql", year: 2011, semester: "summer") %>
+        <li><%= link_to "języki programowania", students_path(class_name: "jp", year: 2011, semester: "summer") %>
+        <li class="divider">
+        <li><%= link_to "architektura serwisów internetowych",
+                  students_path(class_name: "asi", year: 2011, semester: "summer") %>
+        <li><%= link_to "techniki internetowe", students_path(class_name: "ti", year: 2011, semester: "summer") %>
+        <li class="divider">
+        <li><%= link_to "seminarium", students_path(class_name: "seminarium", year: 2011, semester: "summer") %>
+        <li class="divider">
+        <li><a href="http://inf.ug.edu.pl/plan">plan zajęć</a>
+      </ul>
+    </li>
+    <li><%= link_to "Admin", admin_students_path %>
+    <li><%= link_to "Users", users_index_path %>
+  </ul>
+</div>
 
 <div class="pull-right">
 <% if current_user %>

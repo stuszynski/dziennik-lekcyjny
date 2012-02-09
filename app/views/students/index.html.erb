@@ -6,11 +6,13 @@
     </div>
     <% group = student.group %>
     <div class="full-name"><%= link_to student.full_name, student, class: group, target: student.full_name %></div>
-    <div class="absences"><%= bullets(student.absences) %></div>
+    <div class="absences span3"><%= bullets(student.absences) %></div>
     <div class="links">
       <%= link_to '✎ Edit', edit_student_path(student), class: "btn small", target: "_new" %>
     </div>
-    <div class="rank"><progress value='<%= student.rank/100.0 || 0.0 %>'><i>Your browser does not support the progress element!</i></progress></div>
+    <div class="rank"><progress value='<%= student.rank/100.0 || 0.0 %>'>
+      <i>Your browser does not support the progress element!</i></progress>
+    </div>
   </div>
 </article>
 <% end %>

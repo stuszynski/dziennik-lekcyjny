@@ -17,10 +17,15 @@
  *= require_self
 */
 
-.topbar .pull-right {
+.actions {
+  margin: 2em 0;
+}
+
+.navbar-inner .pull-right {
   margin-top: 6px;
 }
- .pull-right .logged {
+
+.pull-right .logged {
   color: #FFD91C;
   margin-right: 1em;
 }
@@ -31,12 +36,13 @@
 }
 
 .disabled .rank {
+  margin: 1em 0 0 1em;
   color: red;
-  text-align: right;
+  text-align: left;
 }
 
 .disabled .full_name {
+  margin: 1em 0;
   color: #008;
   text-align: left;
-  margin-left: 50px;
 }
