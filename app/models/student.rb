@@ -12,12 +12,12 @@ class Student
   field :uid, type: Integer        # uid z GitHub, http://caius.github.com/github_id/
   field :absences, type: Array
   field :comments, type: String
-  field :class_name, type: String, default: "unknown"
-  field :group, type: String, default: "unknown"
+  field :class_name, type: String, default: "unallocated"
+  field :group, type: String, default: "unallocated"
   field :repositories, type: String
   field :rank, type: Integer, default: 0
   field :year, type: Integer
-  field :semester, type: Integer
+  field :semester, type: String
 
   # getter and setter
 
