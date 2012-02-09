@@ -6,8 +6,8 @@ class StudentsController < ApplicationController
 
   # student może modyfikować: :id_number, :nickname, :comments, :group, :repositories
 
-  attr_protected :last_name, :first_name, :uid, :absences, :class_name, :rank, :year, :semester
-  attr_protected :last_name, :first_name, :uid, :absences, :class_name, :rank, :year, :semester, :as => :admin
+  attr_accessible :id_number, :nickname, :comments, :group, :repositories
+  attr_accessible :rank, :full_name, :uid, :absences, :class_name, :group, :year, :semester, :as => :admin
 
   load_and_authorize_resource
   # skip_authorize_resource :only => :index
