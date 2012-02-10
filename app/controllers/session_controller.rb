@@ -1,8 +1,8 @@
 class SessionController < ApplicationController
 
   def new
-    redirect_to '/auth/github'
-    # redirect_to '/auth/twitter'
+    # redirect_to '/auth/github'
+    redirect_to(request.env['SCRIPT_NAME'].to_s + '/auth/github')
   end
 
   # def create
