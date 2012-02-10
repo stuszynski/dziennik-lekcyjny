@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
   attr_accessible :repositories, :nickname, :uid, :comments, :group, :id_number
 
   attr_accessible :repositories, :nickname, :uid, :comments, :group, :id_number,
-    :rank, :full_name, :absences, :class_name, :year, :semester,
+    :rank, :full_name, :absences_list, :class_name, :year, :semester,
     :as => :admin
 
   load_and_authorize_resource
