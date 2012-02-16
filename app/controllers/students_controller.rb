@@ -31,7 +31,7 @@ class StudentsController < ApplicationController
     if params[:class_name]
       @students = Student.where(class_name: class_name, year: year, semester: semester)
     else
-      @students = Student.where(year: 2011, semester: "summer")
+      @students = Student.where(year: 2011, semester: "summer", class_name: "unallocated")
     end
 
     # @students = Student.all
