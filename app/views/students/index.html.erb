@@ -1,18 +1,25 @@
 <% @students.each do |student| %>
 <article class="index">
-  <div class="student clearfix">
-    <div class="presence">
-      <%= link_to '☺', not_present_student_path(student), method: :put, remote: true, data: { type: :json } %>
+  <div class="row student">
+
+    <div class="span5">
+      <div class="presence">
+        <%= link_to '☺', not_present_student_path(student), method: :put, remote: true, data: { type: :json } %>
+      </div>
+      <% group = student.group %>
+      <div class="full-name"><%= link_to student.full_name, student, class: group, target: student.full_name %></div>
+      <div class="absences"><%= bullets(student.absences) %></div>
     </div>
-    <% group = student.group %>
-    <div class="full-name"><%= link_to student.full_name, student, class: group, target: student.full_name %></div>
-    <div class="absences span3"><%= bullets(student.absences) %></div>
-    <div class="links">
-      <%= link_to '✎ Edit', edit_student_path(student), class: "btn small", target: "_new" %>
+
+    <div class="span7">
+      <div class="links">
+        <%= link_to '✎ Edit', edit_student_path(student), class: "btn small", target: student.full_name %>
+      </div>
+      <div class="rank"><progress value='<%= student.rank/100.0 || 0.0 %>'>
+          <i>Your browser does not support the progress element!</i></progress>
+      </div>
     </div>
-    <div class="rank"><progress value='<%= student.rank/100.0 || 0.0 %>'>
-      <i>Your browser does not support the progress element!</i></progress>
-    </div>
+
   </div>
 </article>
 <% end %>
