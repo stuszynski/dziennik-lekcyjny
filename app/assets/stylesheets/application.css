@@ -46,3 +46,7 @@
   color: #008;
   text-align: left;
 }
+
+.choices ul, .choices ol {
+  margin: 0;
+}
