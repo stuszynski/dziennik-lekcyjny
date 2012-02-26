@@ -26,7 +26,7 @@ class Student
   end
 
   def full_name=(name)
-    split = name.split(/\s+/, 2)
+    split = name.strip.split(/\s+/, 2)
     self.last_name = split.first
     self.first_name = split.last
   end
